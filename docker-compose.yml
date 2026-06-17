@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: django_app_1
+    restart: unless-stopped
+    volumes:
+      - .:/app
+      - /app/venv/
+    ports:
+      - "8001:8000"
+    environment:
+      - DEBUG=0
